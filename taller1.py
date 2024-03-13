@@ -2,13 +2,13 @@ class implantesMedicos:
     def __init__(self, marca, material, numRegistro):
         self.__marca=marca
         self.__material=material
-        self.__numRegistro=numRegistro
+        self.numRegistro=numRegistro
 
     def mostrarInformacion(self):
         print(f"""El implante médico tiene la siguiente información:
         Marca: {self.__marca}
         Material: {self.__material}
-        Registro: {self.__numRegistro}
+        Registro: {self.numRegistro}
 """)
 class protesisCadera(implantesMedicos):
     def __init__(self, marca, material, numRegistro,tipoFijacion,tamaño):
@@ -91,94 +91,94 @@ class interfazUsuario:
 
     def agregarImplante(self, implante):
         if implante in self.implantes:
-            print(f"El implante {self.__numRegistro} ya se encuentra registrado")
+            print(f"El implante {implante.numRegistro} ya se encuentra registrado")
         else:
             self.implantes.append(implante)
-            print(f"El implante {self.__numRegistro} se registró exitosamente")
+            print(f"El implante {implante.numRegistro} se registró exitosamente")
 
     def eliminarImplante(self, numRegistro):
         for implante in self.implantes:
-            if implante._implantesMedicos__numRegistro == numRegistro:
+            if implante.numRegistro == numRegistro:
                 self.implantes.remove(implante)
                 print(f"El implante {numRegistro} se eliminó correctamente")
                 return
         print(f"El implante {numRegistro} no se encuentra registrado")    
-    
+  
     def modificarProtesis(self, numRegistro, nuevaMarca=None, nuevoMaterial=None, nuevo_numRegistro=None, nuevo_tipoFijacion=None,nuevoTamaño=None):
         for implante in self.implantes:
-            if implante._implantesMedicos__numRegistro == numRegistro:
+            if implante.numRegistro == numRegistro:
                 if nuevaMarca:
-                    implante._implantesMedicos__marca = nuevaMarca
+                    implante.marca = nuevaMarca
                 if nuevoMaterial:
-                    implante._implantesMedicos__material = nuevoMaterial
+                    implante.material = nuevoMaterial
                 if nuevo_numRegistro:
-                    implante._implantesMedicos__numRegistro = nuevo_numRegistro
+                    implante.numRegistro = nuevo_numRegistro
                 print(f"El implante {numRegistro} se ha modificado correctamente")
                 if nuevo_tipoFijacion:
-                    implante._implantesMedicos__numRegistro = nuevo_tipoFijacion
+                    implante.tipoFijacion = nuevo_tipoFijacion
                 if nuevoTamaño:
-                    implante._implantesMedicos__numRegistro = nuevoTamaño
+                    implante.tamaño = nuevoTamaño
                 return
         print(f"El implante {numRegistro} no se encuentra registrado")
 
 
     def modificarMarcapasos(self, numRegistro, nuevaMarca=None, nuevoMaterial=None, nuevo_numRegistro=None,nuevo_numElectrodos=None,nuevoAlambrico=None,nuevoFrecuencia=None):
         for implante in self.implantes:
-            if implante._implantesMedicos__numRegistro == numRegistro:
+            if implante.numRegistro == numRegistro:
                 if nuevaMarca:
-                    implante._implantesMedicos__marca = nuevaMarca
+                    implante.marca = nuevaMarca
                 if nuevoMaterial:
-                    implante._implantesMedicos__material = nuevoMaterial
+                    implante.material = nuevoMaterial
                 if nuevo_numRegistro:
-                    implante._implantesMedicos__numRegistro = nuevo_numRegistro
+                    implante.numRegistro = nuevo_numRegistro
                 print(f"El implante {numRegistro} se ha modificado correctamente")
                 if nuevo_numElectrodos:
-                    implante._implantesMedicos__numRegistro = nuevo_numElectrodos
+                    implante.numElectrodos = nuevo_numElectrodos
                 if nuevoAlambrico:
-                    implante._implantesMedicos__numRegistro = nuevoAlambrico
+                    implante.alambrico = nuevoAlambrico
                 if nuevoFrecuencia:
-                    implante._implantesMedicos__numRegistro = nuevoFrecuencia
+                    implante.frecuencia = nuevoFrecuencia
                 return
         print(f"El implante {numRegistro} no se encuentra registrado")
 
     def modificar_stentsCoronarios(self, numRegistro, nuevaMarca=None, nuevoMaterial=None, nuevo_numRegistro=None,nuevolongitud=None,nuevoDiametro=None):
         for implante in self.implantes:
-            if implante._implantesMedicos__numRegistro == numRegistro:
+            if implante.numRegistro == numRegistro:
                 if nuevaMarca:
-                    implante._implantesMedicos__marca = nuevaMarca
+                    implante.marca = nuevaMarca
                 if nuevoMaterial:
-                    implante._implantesMedicos__material = nuevoMaterial
+                    implante.material = nuevoMaterial
                 if nuevo_numRegistro:
-                    implante._implantesMedicos__numRegistro = nuevo_numRegistro
+                    implante.numRegistro = nuevo_numRegistro
                 print(f"El implante {numRegistro} se ha modificado correctamente")
                 if nuevolongitud:
-                    implante._implantesMedicos__numRegistro = nuevolongitud
+                    implante.longitud = nuevolongitud
                 if nuevoDiametro:
-                    implante._implantesMedicos__numRegistro = nuevoDiametro
+                    implante.diametro = nuevoDiametro
                 return
         print(f"El implante {numRegistro} no se encuentra registrado")
 
     def modificar_implantesDentales(self, numRegistro, nuevaMarca=None, nuevoMaterial=None, nuevo_numRegistro=None,nuevoForma=None,nuevo_sistemaFijacion=None):
         for implante in self.implantes:
-            if implante._implantesMedicos__numRegistro == numRegistro:
+            if implante.numRegistro == numRegistro:
                 if nuevaMarca:
-                    implante._implantesMedicos__marca = nuevaMarca
+                    implante.marca = nuevaMarca
                 if nuevoMaterial:
-                    implante._implantesMedicos__material = nuevoMaterial
+                    implante.material = nuevoMaterial
                 if nuevo_numRegistro:
-                    implante._implantesMedicos__numRegistro = nuevo_numRegistro
+                    implante.numRegistro = nuevo_numRegistro
                 print(f"El implante {numRegistro} se ha modificado correctamente")
                 if nuevoForma:
-                    implante._implantesMedicos__numRegistro = nuevoForma
+                    implante.forma = nuevoForma
                 if nuevo_sistemaFijacion:
-                    implante._implantesMedicos__numRegistro = nuevo_sistemaFijacion
+                    implante.sistemaFijacion = nuevo_sistemaFijacion
                 return
         print(f"El implante {numRegistro} no se encuentra registrado")
     
-    def verInventario(self, implante): #REVISAR
-        for i in self.implantes:
-            for i, implante in enumerate(self.implantes):
-                print(f"Implante {i+1}: {implante}")
+    def verInventario(self): #REVISAR
+        for i, implante in enumerate(self.implantes):
+            print(f"Implante {i+1}:")
+            implante.mostrarInformacion()
 
 
 
@@ -198,8 +198,8 @@ while True:
         marca = input("Ingrese la marca del implante: ")
         material = input("Ingrese el material del implante: ")
         numRegistro = input("Ingrese el número de registro del implante: ")
-        nuevo_implante = implantesMedicos(marca, material, numRegistro)
-        interfaz.agregarImplante(nuevo_implante)
+        nuevoImplante = implantesMedicos(marca, material, numRegistro)
+        interfaz.agregarImplante(nuevoImplante)
     elif menu == 2:
         numRegistro = input("Ingrese el número de registro del implante a eliminar: ")
         interfaz.eliminarImplante(numRegistro)
