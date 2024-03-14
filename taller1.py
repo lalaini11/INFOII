@@ -1,3 +1,7 @@
+#ELABORADO POR GRISSY LILIANA CARDILES MARTINEZ
+# Y SOFIA VILLAMIL
+
+
 class implantesMedicos:
     def __init__(self, marca, material, numRegistro):
         self.__marca=marca
